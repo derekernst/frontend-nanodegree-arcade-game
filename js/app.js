@@ -69,10 +69,10 @@ Player.prototype.handleInput = function(allowedKeys) {
 Player.prototype.checkCollisions = function() {
   for (var i = 0; i < allEnemies.length; i++) {
         var enemy = allEnemies[i];
-        if (this.x <= enemy.x + 50 &&
-        this.x + 50 >= enemy.x &&
-        this.y <= enemy.y + 50 &&
-        50 + this.y >= enemy.y ) {
+        if (this.x <= enemy.x + 44 &&
+        this.x + 44 >= enemy.x &&
+        this.y <= enemy.y + 44 &&
+        44 + this.y >= enemy.y ) {
             console.log("collision");
             this.reset();
         }
