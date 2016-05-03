@@ -34,7 +34,7 @@ var Player = function(x, y, speed) {
 };
 
 Player.prototype.update = function(dt) {
-    player.speed *= dt;
+    this.speed *= dt;
 
     // this.checkCollisions();
 };
@@ -51,28 +51,42 @@ Player.prototype.reset = function() {
 
 Player.prototype.handleInput = function(allowedKeys) {
     switch (allowedKeys) {
-        case "left": if (this.x > 51) { this.x -= 101};
-        break;
+        case "left":
+            if (this.x > 51) {
+                this.x -= 101
+            };
+            break;
 
-        case "up": if (this.y > 62) { this.y -= 83} else {player.reset()};
-        break;
+        case "up":
+            if (this.y > 62) {
+                this.y -= 83
+            } else {
+                player.reset()
+            };
+            break;
 
-        case "right": if (this.x < 757) { this.x += 101};
-        break;
+        case "right":
+            if (this.x < 757) {
+                this.x += 101
+            };
+            break;
 
-        case "down": if (this.y < 560) { this.y += 83};
-        break;
+        case "down":
+            if (this.y < 560) {
+                this.y += 83
+            };
+            break;
     }
     player.update();
 };
 
 Player.prototype.checkCollisions = function() {
-  for (var i = 0; i < allEnemies.length; i++) {
+    for (var i = 0; i < allEnemies.length; i++) {
         var enemy = allEnemies[i];
         if (this.x <= enemy.x + 44 &&
-        this.x + 44 >= enemy.x &&
-        this.y <= enemy.y + 44 &&
-        44 + this.y >= enemy.y ) {
+            this.x + 44 >= enemy.x &&
+            this.y <= enemy.y + 44 &&
+            44 + this.y >= enemy.y) {
             console.log("collision");
             this.reset();
         }
@@ -102,18 +116,18 @@ window.setInterval(function() {
         enemy = new Enemy(startX, 228, (speed * 400));
     } else if (randomNum <= 80) {
         enemy = new Enemy(startX, 311, (speed * 400));
-    }else if (randomNum > 80) {
+    } else if (randomNum > 80) {
         enemy = new Enemy(startX, 394, (speed * 400));
     }
     //Add the new Enemy to the allEnemies array
     allEnemies.push(enemy);
     return allEnemies;
 
-//Close the function and set the interval for performing the enemy creation (miliseconds)
-},450);
+    //Close the function and set the interval for performing the enemy creation (miliseconds)
+}, 450);
 
 // Place the player object in a variable called player
-var player = new Player(404.5,560,2000);
+var player = new Player(404.5, 560, 2000);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.

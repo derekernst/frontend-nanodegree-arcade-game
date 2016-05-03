@@ -13,7 +13,6 @@
  * the canvas' context (ctx) object globally available to make writing app.js
  * a little simpler to work with.
  */
-
 var Engine = (function(global) {
     /* Predefine the variables we'll be using within this scope,
      * create the canvas element, grab the 2D context for that canvas
@@ -110,14 +109,14 @@ var Engine = (function(global) {
          * for that particular row of the game level.
          */
         var rowImages = [
-                'images/water-block.png',   // Top row is water
-                'images/stone-block.png',   // Row 1 of 5 of stone
-                'images/stone-block.png',   // Row 2 of 5 of stone
-                'images/stone-block.png',   // Row 3 of 5 of stone
-                'images/stone-block.png',   // Row 4 of 5 of stone
-                'images/stone-block.png',   // Row 5 of 5 of stone
-                'images/grass-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
+                'images/water-block.png', // Top row is water
+                'images/stone-block.png', // Row 1 of 5 of stone
+                'images/stone-block.png', // Row 2 of 5 of stone
+                'images/stone-block.png', // Row 3 of 5 of stone
+                'images/stone-block.png', // Row 4 of 5 of stone
+                'images/stone-block.png', // Row 5 of 5 of stone
+                'images/grass-block.png', // Row 1 of 2 of grass
+                'images/grass-block.png' // Row 2 of 2 of grass
             ],
             numRows = 8,
             numCols = 9,
@@ -162,8 +161,7 @@ var Engine = (function(global) {
      * handle game reset states - maybe a new game menu or a game over screen
      * those sorts of things. It's only called once by the init() method.
      */
-    function reset() {
-    }
+    function reset() {}
 
     /* Go ahead and load all of the images we know we're going to need to
      * draw our game level. Then set init as the callback method, so that when
