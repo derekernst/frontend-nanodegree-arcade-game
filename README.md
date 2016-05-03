@@ -1,6 +1,11 @@
-frontend-nanodegree-arcade-game
-===============================
+ # Classic Arcade Game Clone
 
-Students should use this [rubric](https://www.udacity.com/course/viewer/#!/c-nd001/l-2696458597/m-2687128535) for self-checking their submission.
+A clone of the classic Frogger game with less frogs!
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## Download
+
+Clone the repository and open in your browser of choice.
+
+```git clone https://github.com/derekernst/frontend-nanodegree-arcade-game.git```
+
+## How to Play
