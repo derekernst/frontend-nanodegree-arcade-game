@@ -15,7 +15,7 @@ var Enemy = function(x, y, speed) {
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
     //Multiply by dt to keep the animations consistent for all users
-    return this.x += (this.speed * dt);
+    this.x += (this.speed * dt);
 };
 
 // Draw the enemy on the screen
@@ -27,16 +27,14 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 
-var Player = function(x, y, speed) {
+var Player = function(x, y) {
     this.sprite = 'images/char-boy.png';
     this.x = x;
     this.y = y;
 };
 
 Player.prototype.update = function(dt) {
-    this.speed *= dt;
 
-    // this.checkCollisions();
 };
 
 Player.prototype.render = function() {
@@ -46,7 +44,6 @@ Player.prototype.render = function() {
 Player.prototype.reset = function() {
     this.x = 404.5;
     this.y = 560;
-    this.speed = 2000;
 };
 
 Player.prototype.handleInput = function(allowedKeys) {
@@ -61,7 +58,7 @@ Player.prototype.handleInput = function(allowedKeys) {
             if (this.y > 62) {
                 this.y -= 83
             } else {
-                player.reset()
+                this.reset()
             };
             break;
 
@@ -77,7 +74,6 @@ Player.prototype.handleInput = function(allowedKeys) {
             };
             break;
     }
-    player.update();
 };
 
 Player.prototype.checkCollisions = function() {
@@ -121,13 +117,12 @@ window.setInterval(function() {
     }
     //Add the new Enemy to the allEnemies array
     allEnemies.push(enemy);
-    return allEnemies;
 
     //Close the function and set the interval for performing the enemy creation (miliseconds)
 }, 450);
 
 // Place the player object in a variable called player
-var player = new Player(404.5, 560, 2000);
+var player = new Player(404.5, 560);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
